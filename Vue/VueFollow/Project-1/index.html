@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <title>Vue project 1</title>
+
+    <style>
+        .bg{
+            background-color: green;
+            color:white
+        }
+        .border{
+            border: 2px solid yellow
+        }
+    </style>
+</head>
+<body>
+    <h2>Vue Basics</h2>
+    <div id="app">
+        <h3>{{ title }}</h3>
+        <div>
+            Call function
+            <h3>{{ greeting('Morning') }}</h3>
+        </div>
+        Binding data <hr>
+        <a v-bind:href="googleUrl">google</a>
+        <input type="text" v-bind:class ="classes" v-bind:value="name">
+        <input type="text" v-model:value="text">
+        <input type="text" v-bind:value="text">
+        <div>{{ text }}</div>
+        <hr>
+        <strong>Events</strong><hr>
+        <button @click = "increase(1)">Increase by 1 </button>
+        <button @click = "decrease(1)">decrease by 1 </button>
+        <input type="text" @keyup="updateText" id="">
+        <div v-if="val >0">{{ val }} </div>
+        <div v-else>{{ message }}</div>
+        <hr>
+        <button @click="showData">Show ( {{ show }} )</button>
+        <ul v-if="show">
+            <li v-for="(item,index) in items">{{ index }} - {{ item }}</li>
+        </ul>
+        <ol v-if="show">
+            <li v-for="list in lists">{{ list.Name }} - {{ list.Age }} - {{ list.Address }}</li>
+        </ol>
+        
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
